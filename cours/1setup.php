@@ -1,4 +1,4 @@
-//* intro ==========================================================================
+//*------------------------------------ intro ------------------------------------
 //! structured query language
 
 //? on utilise le SQL dans les systemes de bdd relationnel
@@ -47,7 +47,8 @@
 //permet au gestionnaire de savoir dans quelle BDD les requetes vont etre executées
 //? USE database_name
 
-//* TABLES ------------------
+
+//* ------------------------------------ TABLES ------------------------------------
 //! ------------ CREATE TABLE
 //? CREATE TABLE table_name(
     first_column INT NOT NULL,
@@ -58,11 +59,13 @@
 //? ALTER TABLE table_name ADD another_column VARCHAR(255)
 //? ALTER TABLE table_name DROP COLUMN another_column
 
+
 //! ----------- TRUNCATE TABLE
 //supprimer toutes les données d'une table
 //? TRUNCATE TABLE table_name
 
-//* clefs
+
+//* //*------------------------------------ clefs ------------------------------------
 //! ------------ PRIMARY KEY (auto increment)
 //? Primary key : identifiant unique qui permet d'identifier de façon unique chaque 
 enregistrement de la table
@@ -71,8 +74,10 @@ enregistrement de la table
 //? CREATE TABLE table_name(
     id INT PRIMARY KEY AUTO_INCREMENT
 );
+//?AJOUTER UNE CLE PRIMAIRE PRIMARY KEY
+ALTER TABLE books ADD PRIMARY KEY (id_book);
 
-//!--------- FOREIGN KEY --------------
+//! --------- FOREIGN KEY --------------
 // clé qui fait référence à une clé primaire d'une autre table. Permet de mettre en place des relations
 //? CREATE TABLE table_name(
     first_column INT NOT NULL,
@@ -80,4 +85,26 @@ enregistrement de la table
     FOREIGN KEY(second_column) REFERNCE another_table_name(column_with_primary_key) 
 );
 
+
+
+//*------------------------------------ CRUD -------------------------------------
+//! ------------------------ CREATE : INSERT INTO
+//? INSERT INTO table_name (first_column) VALUES (value) ;
+//? INSERT INTO table_name (first_column, another_column) VALUES (value, value);
+//? INSERT INTO table_name (first_column) VALUES (value), (value), (value),;
+
+
+//! ------------------------  READ : SELECT column FROM
+//? SELECT * FROM nom_table
+//? SELECT first_column, another_column FROM nom_table;
+
+
+//! ------------------------  UPDATE : UPDATE table SET col WHERE
+//ATTENTION ATTENTION : sans la condition WHERE ça upadte TOUTE LA COLONE ATTENTION ATTENTION
+//? UPDATE table_name SET first_column = value WHERE another_column=value;
+
+
+//! ------------------------  DELETE : DELETE FROM
+//ATTENTION ATTENTION : sans la condition WHERE ça upadte TOUTE LA COLONE ATTENTION ATTENTION
+//? DELETE FROM table_name WHERE a_column = value;
 
