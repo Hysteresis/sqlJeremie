@@ -23,6 +23,7 @@ SELECT zip_code, name FROM cities WHERE department_code = 77 ORDER BY zip_code D
 
 -- Quel est le code postal (zip_code) le plus grand de la table cities ?
 
+
 -- Avec un seul WHERE et aucun OR, quelle est la requête permettant d'afficher les départements des régions ayant le code suivant : 75, 27, 53, 84 et 93 ? Le résultat doit afficher le nom du département ainsi que le nom et le slug de la région associée.
 
 -- Quelle requête utiliser pour obtenir en résultat, les noms de la région, du département et de chaque ville du département ayant pour code 77 ?
